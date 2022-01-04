@@ -1,0 +1,22 @@
+name: Test Github Action
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        uses: AJ1041927/github-action-test@main
+        id: cop-github-action
+        with:
+          test: Test something
+          enable_debug: ${{ secrets.ENABLE_DEBUG }}
+      - name: Display Github Action output
+        run: |
+          echo "Displaying Github Action output"
+          echo ${{ steps.cop-github-action.outputs.TEST_OUTPUT }}

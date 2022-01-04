@@ -1,0 +1,17 @@
+name: 'CoP GitHub Action'
+description: 'A GitHub Action for CoP Demo.'
+author: 'Amrane Ait Zeouay'
+runs:
+  using: 'node14'
+  main: 'main.js'
+inputs:
+  test:
+    description: 'Any string.'
+    required: true
+  enable_debug:
+    description: 'To enable debug and display logs.'
+    required: false
+
+branding:
+  icon: 'arrow-up'
+  color: 'green'
